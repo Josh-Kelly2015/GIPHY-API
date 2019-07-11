@@ -19,7 +19,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
     <script src="assets/javascript.js"></script>
 </head>
@@ -27,9 +27,29 @@
 <body>
 
 
-<div id = "myButtons"></div>
+    <div class="row">
+        <div id="myButtons"></div>
+    </div>
 
+    <div class="row">
 
+        <div class="col">
+            <div id="myGiphs"></div>
+        </div>
+
+        <div class="col">
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <button class="btn btn-outline-secondary" type="button" id="search">GIPHY-FY</button>
+                </div>
+
+                <input type="text" class="form-control" placeholder="Search for giphs"
+                    aria-label="Example text with button addon" aria-describedby="search">
+            </div>
+
+        </div>
+    </div>
 </body>
 
 </html>
