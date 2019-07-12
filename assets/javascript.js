@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=NdzDFSTJNopW8VJkCARfOsMRIYY2W7wm&q=" + "astronaut" + "&limit=10&offset=10&rating=G&lang=en";
+    
     var topics = ["astronaut", "satellite", "aliens", "NASA", "planets", "stars"];
 
     // (this is necessary otherwise we will have repeat buttons)
@@ -26,7 +26,8 @@ $(document).ready(function () {
 
     $(".arrayButtons").on("click", function () {
         // console.log('hey');
-
+        var value = $(this).attr("data-name");
+        var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=NdzDFSTJNopW8VJkCARfOsMRIYY2W7wm&q=" + value + "&limit=10&offset=10&rating=G&lang=en";
 
         $.ajax({
             url: queryURL,
@@ -63,7 +64,13 @@ $(document).ready(function () {
     $("#search").on("click", function () {
         console.log($(".form-control").val().trim());
         var searchValue = $(".form-control").val().trim();
-        console.log(searchValue.toStr());
+        var newButton = $("<button>");
+        newButton.text(searchValue);
+        newButton.addClass("arrayButtons");
+        newButton.attr("data-name", searchValue);
+        $("#myGiphs").prepend(newButton);
+
+        console.log(searchValue);
         topics.push(searchValue);
 
         //      // Create a button
