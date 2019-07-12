@@ -53,7 +53,7 @@ $(document).ready(function () {
             console.log(giphs);
             giphs.html(responseArray[i].images.original_still.url);
             // Adding the button to the HTML
-            $("#myGiphs").append(giphs);
+            $("#myGiphs").prepend(giphs);
             };
         });
     
@@ -68,10 +68,12 @@ $(document).ready(function () {
         newButton.text(searchValue);
         newButton.addClass("arrayButtons");
         newButton.attr("data-name", searchValue);
-        $("#myGiphs").prepend(newButton);
+        $("#myButtons").append(newButton);
 
         console.log(searchValue);
         topics.push(searchValue);
+        console.log(searchValue);
+
 
         //      // Create a button
         //      var newGiph = $("<button>");
