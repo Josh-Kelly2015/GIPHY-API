@@ -66,7 +66,7 @@ $(document).ready(function () {
         var searchValue = $(".form-control").val().trim();
         var newButton = $("<button>");
         newButton.text(searchValue);
-        newButton.addClass("arrayButtons");
+        newButton.addClass("arrayButtons", "m-auto");
         newButton.attr("data-name", searchValue);
         $("#myButtons").append(newButton);
 
@@ -74,17 +74,10 @@ $(document).ready(function () {
         topics.push(searchValue);
         console.log(searchValue);
 
-
-        //      // Create a button
-        //      var newGiph = $("<button>");
-        //      // Adding a class
-        //      newGiph.addClass("arrayButtons");
-        //      // Adding a data-attribute with a value of the topic at index i
-        //      newGiph.attr("data-name", topics[i]);
-        //      // Providing the button's text with a value of the topic at index i
-        //      newGiph.text(topics[i]);
-        //      // Adding the button to the HTML
-        //      $("#myButtons").append(newGiph);
     });
 
+
+    $("#myGiphs").on("click", function(){
+      console.log(  $(this).attr("src"));
+    });
 });
