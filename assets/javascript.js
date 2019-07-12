@@ -39,20 +39,23 @@ $(document).ready(function () {
             console.log(responseArray);
 
             // This code $("<button>") is all jQuery needs to create the start and end tag. (<button></button>)
-            for (var i = 0; i < responseArray.length; i++)
+            for (var i = 0; i < responseArray.length; i++) {
                 // path to the URL for top 10 giphs recieved
                 console.log(responseArray[i].images.original_still.url);
-            var giphs = $("<button>");
+            var giphs = $("<img>");
             // adding class still for a future on click event that changes still to active
             giphs.addClass("still");
             // attribute because maybe i use this to change the still image not class
             giphs.attr("data-name", "still");
+            giphs.attr("src", responseArray[i].images.original_still.url);
             //putting giph inside the button tag so we can click to change the url
+            console.log(giphs);
             giphs.html(responseArray[i].images.original_still.url);
             // Adding the button to the HTML
             $("#myGiphs").append(giphs);
+            };
         });
-
+    
     });
 
 
